@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B3998C9-837D-4C28-A932-EFA4ECCC37E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Distribution2.BitTorrent</RootNamespace>
+    <AssemblyName>Distribution2.BitTorrent</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MiscUtil, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3c42c4bfacf7596, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MiscUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnounceList.cs" />
+    <Compile Include="AnnounceUri.cs" />
+    <Compile Include="BEncoding\BEncodingSettings.cs" />
+    <Compile Include="BEncoding\BEncodedDictionary.cs" />
+    <Compile Include="BEncoding\BEncodedDictionaryBase.cs" />
+    <Compile Include="BEncoding\BEncodedInteger.cs" />
+    <Compile Include="BEncoding\BEncodedList.cs" />
+    <Compile Include="BEncoding\BEncodedListBase.cs" />
+    <Compile Include="BEncoding\BEncodedStringComparer.cs" />
+    <Compile Include="BEncoding\BEncodedString.cs" />
+    <Compile Include="BEncoding\BEncodedFormatDecodeException.cs" />
+    <Compile Include="BEncoding\IBEncodedValue.cs" />
+    <Compile Include="BEncoding\IBencodedValueWithBinaryEncoder.cs" />
+    <Compile Include="IAnnounceEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadOnlyDictionary.cs" />
+    <Compile Include="Torrent.cs" />
+    <Compile Include="Tracker\Client\Extensions\CoalescedAnnounceResponse.cs" />
+    <Compile Include="Tracker\Client\Extensions\CoalescedScrapeResponse.cs" />
+    <Compile Include="Tracker\Client\Enums.cs" />
+    <Compile Include="Tracker\Client\Extensions\ConcurrentExtensions.cs" />
+    <Compile Include="Tracker\Client\Extensions\InternalAnnounceResponse.cs" />
+    <Compile Include="Tracker\Client\Extensions\InternalAnnounceResponseCollection.cs" />
+    <Compile Include="Tracker\Client\Extensions\RequestHelper.cs" />
+    <Compile Include="HexEncodingUtil.cs" />
+    <Compile Include="Tracker\Client\Http\HttpAnnounceRequest.cs" />
+    <Compile Include="Tracker\Client\Http\HttpAnnounceResponse.cs" />
+    <Compile Include="Tracker\Client\Http\HttpAnnounceResponseFactory.cs" />
+    <Compile Include="Tracker\Client\Http\HttpAnnounceTransport.cs" />
+    <Compile Include="Tracker\Client\Http\HttpAnnounceTransportFactory.cs" />
+    <Compile Include="Tracker\Client\Http\HttpScrapeRequest.cs" />
+    <Compile Include="Tracker\Client\Http\HttpScrapeResponse.cs" />
+    <Compile Include="Tracker\Client\Http\HttpScrapeResponseFactory.cs" />
+    <Compile Include="Tracker\Client\Http\HttpScrapeTransport.cs" />
+    <Compile Include="Tracker\Client\Http\HttpScrapeTransportFactory.cs" />
+    <Compile Include="Tracker\Client\Http\HttpTrackerTransport.cs" />
+    <Compile Include="Tracker\Client\Http\HttpTrackerTransportFactory.cs" />
+    <Compile Include="Tracker\Client\IAnnounceRequest.cs" />
+    <Compile Include="Tracker\Client\IAnnounceRequest2.cs" />
+    <Compile Include="Tracker\Client\IAnnounceRequest3.cs" />
+    <Compile Include="Tracker\Client\IAnnounceResponse.cs" />
+    <Compile Include="Tracker\Client\IAnnounceResponse2.cs" />
+    <Compile Include="Tracker\Client\IAnnounceResponseFactory.cs" />
+    <Compile Include="Tracker\Client\IAnnounceTransport.cs" />
+    <Compile Include="Tracker\Client\IAnnounceTransportFactory.cs" />
+    <Compile Include="InfoHash.cs" />
+    <Compile Include="Tracker\Client\InfoHashList.cs" />
+    <Compile Include="Tracker\Client\InternalTorrentStatisticCollection.cs" />
+    <Compile Include="Tracker\Client\IScrapeRequest.cs" />
+    <Compile Include="Tracker\Client\IScrapeRequest2.cs" />
+    <Compile Include="Tracker\Client\IScrapeResponse.cs" />
+    <Compile Include="Tracker\Client\IScrapeResponseFactory.cs" />
+    <Compile Include="Tracker\Client\IScrapeTransport.cs" />
+    <Compile Include="Tracker\Client\IScrapeTransportFactory.cs" />
+    <Compile Include="Tracker\Client\Peer.cs" />
+    <Compile Include="Tracker\Client\PeerId.cs" />
+    <Compile Include="Tracker\Client\PeerList.cs" />
+    <Compile Include="Tracker\Client\InternalPeerList.cs" />
+    <Compile Include="Tracker\Client\TorrentStatistic.cs" />
+    <Compile Include="Tracker\Client\TorrentStatisticCollection.cs" />
+    <Compile Include="Tracker\Client\Tracker.cs" />
+    <Compile Include="Tracker\Client\Tracker.Methods.cs" />
+    <Compile Include="Tracker\Client\TrackerBehavior.cs" />
+    <Compile Include="Tracker\Client\TrackerException.cs" />
+    <Compile Include="Tracker\Client\TrackerFailureException.cs" />
+    <Compile Include="Tracker\Client\TrackerSettings.cs" />
+    <Compile Include="Tracker\Client\Udp\ISerializeReceive.cs" />
+    <Compile Include="Tracker\Client\Udp\ISerializeTransmit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceRequestPacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceResponseFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceResponsePacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceTransport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpAnnounceTransportFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpConnectRequestPacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpConnectResponsePacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpErrorResponsePacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpPeer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeRequestPacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeResponse.cs" />
+    <Compile Include="Tracker\Client\Udp\UdpScrapeResponseFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeResponsePacket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeTransport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpScrapeTransportFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Udp\UdpTransport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracker\Client\Extensions\Extensions.cs" />
+    <Compile Include="Tracker\MultipleException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
